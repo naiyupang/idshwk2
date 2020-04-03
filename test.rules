@@ -1,0 +1,2 @@
+alert tcp any any -> any 3399 (pcre:"/(login|Initial)/";flowbits:noalert;flowbits:set,markflow;sid:1000001)
+alert tcp any any -> any 3399 (msg:" bot founded";pcre:"/(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}:(([1-9]\d{0,3})|([1-5]\d{4})|(6[1-4]\d{3})|(65[1-4]{2})|(655[1-2]\d)|(6553[1-5]))/";flowbits:isset,markflow;sid:1000002)
